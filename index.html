@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WDD 231 • Course Home Page</title>
+  <meta name="description" content="Course home page for WDD 231 demonstrating HTML, CSS, and JavaScript." />
+  <meta name="author" content="Herwin Vincent Gaela" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS (small first, then larger with media query) -->
+  <link href="styles/small.css" rel="stylesheet">
+  <link href="styles/larger.css" rel="stylesheet">
+
+  <!-- Inline CSS for social icons -->
+  <style>
+    .social a {
+      color: #1f2937;       /* dark gray */
+      font-size: 1.5rem;    /* bigger icons */
+      margin: 0 .5rem;      /* spacing */
+    }
+    .social a:hover {
+      color: #2563eb;       /* blue hover effect */
+    }
+  </style>
+
+  <!-- JS (head + defer as required) -->
+  <script src="scripts/nav.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+  <script src="scripts/courses.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="./" aria-label="Home">
+      <img src="images/logo.jpg" alt="Site logo" width="48" height="48" />
+    </a>
+    <span class="site-owner">Herwin Vincent Gaela</span>
+
+    <button id="hamburger" class="hamburger" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+
+    <nav id="primary-nav" class="nav">
+      <ul>
+        <li><a class="active" href="./">Home</a></li>
+        <li><a href="chamber/">Chamber Project</a></li>
+        <li><a href="final/">Final Project</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Home</h1>
+
+    <!-- row 1 (left) -->
+    <section class="panel about">
+      <h2 class="bar">About Me</h2>
+      <p>
+        Hello everyone! My name is Herwin, and I’m currently based in the Philippines. 
+        I enjoy learning about technology, communication, and ways to improve problem-solving skills. 
+        I’m excited to be in WDD231 because I want to strengthen my web development skills and gain hands-on 
+        experience that will help me build professional, user-friendly websites. 
+        My goal for this course is to deepen my understanding of web design principles 
+        and apply them effectively in real-world projects.
+      </p>
+    </section>
+
+    <!-- row 1 (right) -->
+    <aside class="panel photo">
+      <h2 class="bar">Student Photo</h2>
+      <img src="images/profile.jpg" alt="Portrait of Herwin Vincent Gaela" width="320" height="320" loading="lazy">
+    </aside>
+
+    <!-- row 2 (full width) -->
+    <section class="panel courses-wrap" id="courses" aria-labelledby="courses-heading">
+      <h2 id="courses-heading" class="bar">Web Certificate Courses</h2>
+
+      <div class="filters" role="group" aria-label="Course filters">
+        <button data-filter="all" class="btn active">All</button>
+        <button data-filter="CSE" class="btn">CSE</button>
+        <button data-filter="WDD" class="btn">WDD</button>
+      </div>
+
+      <!-- course bars injected here -->
+      <div id="course-cards" class="bars"></div>
+      <p id="credits" class="totals" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="social">
+      <a href="https://github.com/ghrwn" aria-label="GitHub" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/herwin-vincent/" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </p>
+
+    <p>&copy; <span id="currentyear"></span> <span class="owner">Herwin Vincent Gaela</span> — Quezon, Philippines</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>
