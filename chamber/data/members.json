@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Greenfield Supermarket",
+    "address": "5th Avenue, Cubao, Quezon City",
+    "phone": "+63 2 5555 1234",
+    "website": "https://greenfield.ph",
+    "image": "greenfield.jpg",
+    "membershipLevel": 3,
+    "category": "Retail"
+  },
+  {
+    "name": "QC Tech Solutions",
+    "address": "Timog Avenue, Diliman, QC",
+    "phone": "+63 2 4444 5678",
+    "website": "https://qctech.ph",
+    "image": "qctech.jpg",
+    "membershipLevel": 2,
+    "category": "Technology"
+  },
+  {
+    "name": "Bella's Bakery & Cafe",
+    "address": "Maginhawa St, UP Village, QC",
+    "phone": "+63 2 3333 9876",
+    "website": "https://bellasbakery.ph",
+    "image": "bellas.jpg",
+    "membershipLevel": 1,
+    "category": "Food & Beverage"
+  },
+  {
+    "name": "MetroBank - QC Branch",
+    "address": "EDSA, Cubao, Quezon City",
+    "phone": "+63 2 2222 1111",
+    "website": "https://metrobank.ph/qc",
+    "image": "metrobank.jpg",
+    "membershipLevel": 3,
+    "category": "Finance"
+  },
+  {
+    "name": "QC Medical Center",
+    "address": "Banawe St, QC",
+    "phone": "+63 2 7777 8888",
+    "website": "https://qcmedcenter.ph",
+    "image": "qcmed.jpg",
+    "membershipLevel": 3,
+    "category": "Healthcare"
+  },
+  {
+    "name": "BookNook Library & Cafe",
+    "address": "Katipunan Ave, Loyola Heights",
+    "phone": "+63 2 6666 4321",
+    "website": "https://booknook.ph",
+    "image": "booknook.jpg",
+    "membershipLevel": 2,
+    "category": "Education & Retail"
+  },
+  {
+    "name": "QC Fitness Gym",
+    "address": "Aurora Blvd, New Manila",
+    "phone": "+63 2 8888 2222",
+    "website": "https://qcfitness.ph",
+    "image": "qcfitness.jpg",
+    "membershipLevel": 1,
+    "category": "Wellness"
+  }
+]

@@ -7,65 +7,45 @@ async function getProphetData() {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    console.table(data.prophets); // For debugging in browser console
     displayProphets(data.prophets);
   } catch (error) {
     console.error('Error fetching prophet data:', error);
   }
 }
 
-const displayProphets = (prophets) => {
+function displayProphets(prophets) {
   const cards = document.querySelector('#cards');
 
-  prophets.forEach((prophet) => {
+  prophets.forEach(prophet => {
     // Create elements
-    let card = document.createElement('section');
-    let fullName = document.createElement('h2');
-    let portrait = document.createElement('img');
-    let dob = document.createElement('p');
-    let pob = document.createElement('p');
-    let status = document.createElement('p');
-    let order = document.createElement('p');
-    let children = document.createElement('p');
+    const card = document.createElement('section');
+    const fullName = document.createElement('h2');
+    const img = document.createElement('img');
+    const dob = document.createElement('p');
+    const pob = document.createElement('p');
 
-    // Set content and attributes
+    // Set content
     fullName.textContent = `${prophet.name} ${prophet.lastname}`;
 
-    portrait.setAttribute('src', prophet.imageurl);
-    portrait.setAttribute('alt', `Portrait of ${prophet.name} ${prophet.lastname}`);
-    portrait.setAttribute('loading', 'lazy');
-    portrait.setAttribute('width', '340');
-    portrait.setAttribute('height', '440');
+    img.setAttribute('src', prophet.imageurl);
+    img.setAttribute('alt', `Portrait of ${prophet.name} ${prophet.lastname}`);
+    img.setAttribute('loading', 'lazy');
+    img.setAttribute('width', '340');
+    img.setAttribute('height', '440');
 
     dob.textContent = `Date of Birth: ${prophet.birthdate}`;
     pob.textContent = `Place of Birth: ${prophet.birthplace}`;
-
-    // Optional Enhancements
-    status.textContent = prophet.death ? `Died: ${prophet.death}` : 'Living';
-    status.style.fontWeight = 'bold';
-    status.style.color = prophet.death ? '#e74c3c' : '#27ae60';
-
-    order.textContent = `Order: #${prophet.order}`;
-    order.style.fontSize = '0.85rem';
-    order.style.color = '#7f8c8d';
-
-    children.textContent = `Children: ${prophet.numofchildren}`;
-    children.style.fontSize = '0.85rem';
-    children.style.color = '#7f8c8d';
 
     // Append to card
     card.appendChild(fullName);
     card.appendChild(dob);
     card.appendChild(pob);
-    card.appendChild(status);
-    card.appendChild(order);
-    card.appendChild(children);
-    card.appendChild(portrait);
+    card.appendChild(img);
 
     // Append card to container
     cards.appendChild(card);
   });
-};
+}
 
-// Fetch and display data when page loads
+// Fetch and render data on page load
 getProphetData();
