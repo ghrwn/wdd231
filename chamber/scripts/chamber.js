@@ -56,7 +56,12 @@ function displayMembers(members) {
 }
 
 // Display last modified date
-document.getElementById("lastModified").textContent = document.lastModified;
+document.addEventListener("DOMContentLoaded", function() {
+  const lastModElement = document.getElementById("lastModified");
+  if (lastModElement) {
+    lastModElement.textContent = document.lastModified;
+  }
+});
 
 // Initialize on load
 fetchMembers();
