@@ -1,43 +1,95 @@
-// === DATA: edit completed: true/false to match your progress ===
+const courseContainer = document.getElementById('course-cards');
+const creditsDisplay = document.getElementById('credits');
+const courseDetails = document.getElementById('course-details');
+
 const courses = [
-  { code: "WDD 130", title: "Web Fundamentals", credits: 2, prefix: "WDD", completed: true },
-  { code: "WDD 131", title: "Dynamic Web Fundamentals", credits: 2, prefix: "WDD", completed: false },
-  { code: "WDD 231", title: "Frontend Dev I", credits: 3, prefix: "WDD", completed: false },
-  { code: "CSE 110", title: "Intro to Programming", credits: 2, prefix: "CSE", completed: true },
-  { code: "CSE 111", title: "Programming with Functions", credits: 2, prefix: "CSE", completed: false },
-  { code: "CSE 210", title: "Programming with Classes", credits: 3, prefix: "CSE", completed: false }
+  {
+    subject: "WDD",
+    number: "130",
+    title: "Web Fundamentals",
+    credits: 2,
+    certificate: "Web Foundations",
+    description: "Introduction to HTML, CSS, and basic web concepts.",
+    technology: ["HTML", "CSS"]
+  },
+  {
+    subject: "CSE",
+    number: "131",
+    title: "Programming Logic",
+    credits: 2,
+    certificate: "Software Foundations",
+    description: "Learn programming logic and basic algorithms using Python.",
+    technology: ["Python", "Pseudocode"]
+  },
+  {
+    subject: "WDD",
+    number: "231",
+    title: "Web Frontend Development",
+    credits: 2,
+    certificate: "Web Development",
+    description: "Build dynamic websites using modern JavaScript and APIs.",
+    technology: ["JavaScript", "DOM", "Fetch API"]
+  }
 ];
 
-// DOM refs
-const cards = document.getElementById('course-cards');
-const creditsOut = document.getElementById('credits');
-const filterButtons = document.querySelectorAll('.filters .btn');
+let filteredCourses = [...courses];
 
-// render helpers
-function courseCard(c) {
-  return `
-    <div class="card ${c.completed ? 'completed' : ''}">
-      <h3>${c.code}</h3>
-      <p>${c.title}</p>
-      <p><span class="badge">${c.prefix}</span> • ${c.credits} credit${c.credits>1?'s':''}</p>
-    </div>`;
+function calculateTotalCredits(list) {
+  return list.reduce((sum, c) => sum + c.credits, 0);
 }
 
-function render(list) {
-  if (!cards) return;
-  cards.innerHTML = list.map(courseCard).join('');
-  const total = list.reduce((sum, c) => sum + c.credits, 0);  // reduce()
-  if (creditsOut) creditsOut.textContent = `The total credits for courses listed above is ${total}`;
+function updateCreditDisplay() {
+  creditsDisplay.textContent = `The total credits for courses listed above is: ${calculateTotalCredits(filteredCourses)}`;
 }
 
-// filter logic
-function applyFilter(key) {
-  filterButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === key));
-  if (key === 'WDD') return render(courses.filter(c => c.prefix === 'WDD'));
-  if (key === 'CSE') return render(courses.filter(c => c.prefix === 'CSE'));
-  return render(courses); // all
+function renderCourses(list) {
+  courseContainer.innerHTML = '';
+  list.forEach(course => {
+    const div = document.createElement('div');
+    div.classList.add('course-card');
+    div.innerHTML = `
+      <h3>${course.subject} ${course.number}</h3>
+      <h4>${course.title}</h4>
+      <p>Credits: ${course.credits}</p>
+      <p>Certificate: ${course.certificate}</p>
+    `;
+    div.addEventListener('click', () => displayCourseDetails(course));
+    courseContainer.appendChild(div);
+  });
+  updateCreditDisplay();
 }
 
-// init
-render(courses);
-filterButtons.forEach(btn => btn.addEventListener('click', () => applyFilter(btn.dataset.filter)));
+document.querySelectorAll('.filters button').forEach(button => {
+  button.addEventListener('click', function() {
+    document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.dataset.filter;
+    filteredCourses = filter === 'all' ? [...courses] : courses.filter(c => c.subject === filter);
+    renderCourses(filteredCourses);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => renderCourses(filteredCourses));
+
+function displayCourseDetails(course) {
+  courseDetails.innerHTML = `
+    <button id="closeModal">❌</button>
+    <h2>${course.subject} ${course.number}</h2>
+    <h3>${course.title}</h3>
+    <p><strong>Credits</strong>: ${course.credits}</p>
+    <p><strong>Certificate</strong>: ${course.certificate}</p>
+    <p><strong>Description</strong>: ${course.description}</p>
+    <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+  `;
+  courseDetails.showModal();
+
+  document.getElementById('closeModal').addEventListener("click", () => courseDetails.close());
+  courseDetails.addEventListener('click', (event) => {
+    if (event.target === courseDetails) courseDetails.close();
+  });
+}
+
+// Close on Escape
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && courseDetails.open) courseDetails.close();
+});

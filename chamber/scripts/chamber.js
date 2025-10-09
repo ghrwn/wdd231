@@ -1,19 +1,25 @@
-// Toggle between grid and list view
+// =============================
+// CHAMBER MAIN JAVASCRIPT FILE
+// =============================
+
+// --- Toggle between grid and list view (Directory Page Only) ---
 const gridButton = document.querySelector("#grid");
 const listButton = document.querySelector("#list");
 const display = document.querySelector("#members-display");
 
-gridButton.addEventListener("click", () => {
-  display.classList.add("grid");
-  display.classList.remove("list");
-});
+if (gridButton && listButton && display) {
+  gridButton.addEventListener("click", () => {
+    display.classList.add("grid");
+    display.classList.remove("list");
+  });
 
-listButton.addEventListener("click", () => {
-  display.classList.add("list");
-  display.classList.remove("grid");
-});
+  listButton.addEventListener("click", () => {
+    display.classList.add("list");
+    display.classList.remove("grid");
+  });
+}
 
-// Fetch members and display
+// --- Fetch and display members (Directory Page Only) ---
 async function fetchMembers() {
   try {
     const response = await fetch("./data/members.json");
@@ -27,7 +33,9 @@ async function fetchMembers() {
 
 function displayMembers(members) {
   const container = document.querySelector("#members-display");
-  container.innerHTML = ""; // Clear any existing content
+  if (!container) return; // Exit if not on the directory page
+
+  container.innerHTML = "";
 
   members.forEach(member => {
     const card = document.createElement("section");
@@ -39,7 +47,6 @@ function displayMembers(members) {
     else if (member.membershipLevel === 2) badge = "🥈 Silver Member";
     else badge = "⭐ Member";
 
-    // Grid View Content
     card.innerHTML = `
       <img src="images/${member.image}" alt="${member.name}" loading="lazy" width="200" height="150">
       <h3>${member.name}</h3>
@@ -50,18 +57,27 @@ function displayMembers(members) {
       <a href="${member.website}" target="_blank" rel="noopener">Visit Website</a>
     `;
 
-    // List View - hide image, rearrange layout via CSS
     container.appendChild(card);
   });
 }
 
-// Display last modified date
-document.addEventListener("DOMContentLoaded", function() {
-  const lastModElement = document.getElementById("lastModified");
-  if (lastModElement) {
-    lastModElement.textContent = document.lastModified;
+// --- Display current year and last modified date (For ALL pages) ---
+document.addEventListener("DOMContentLoaded", () => {
+  const currentYear = document.getElementById("currentyear");
+  const lastModified = document.getElementById("lastModified");
+
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+  }
+
+  if (lastModified) {
+    lastModified.textContent = `Last Modified: ${document.lastModified}`;
   }
 });
 
-// Initialize on load
-fetchMembers();
+// --- Initialize Directory Page ---
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.querySelector("#members-display")) {
+    fetchMembers();
+  }
+});

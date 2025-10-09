@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Activity | WDD 231</title>
+  <meta name="description" content="Form Activity for WDD 231" />
+  <meta name="author" content="Herwin Vincent Gaela" />
+
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a class="logo" href="./" aria-label="Home">
+        <img src="images/logo.jpg" alt="Site logo" width="48" height="48">
+      </a>
+      <span class="site-owner">Herwin Vincent Gaela</span>
+      <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="primary-nav" class="nav">
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="form.html" class="active">Form</a></li>
+          <li><a href="confirmation.html">Confirmation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Advanced HTML Form</h1>
+    <section class="panel">
+      <h2 class="bar">Registration Form</h2>
+      <form action="confirmation.html" method="get" class="form-panel">
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label for="fname">First Name:</label>
+          <input type="text" id="fname" name="fname" required>
+
+          <label for="lname">Last Name:</label>
+          <input type="text" id="lname" name="lname" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+          <label for="birthdate">Birthdate:</label>
+          <input type="date" id="birthdate" name="birthdate">
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Course Interest</legend>
+
+          <label for="course">Select a Course:</label>
+          <select id="course" name="course">
+            <option value="WDD231">WDD 231 - Web Frontend Development</option>
+            <option value="CSE131">CSE 131 - Programming Logic</option>
+            <option value="WDD130">WDD 130 - Web Fundamentals</option>
+          </select>
+
+          <label>Preferred Learning Mode:</label>
+          <label><input type="radio" name="mode" value="Online" checked> Online</label>
+          <label><input type="radio" name="mode" value="On-site"> On-site</label>
+
+          <label for="updates">Subscribe to course updates?</label>
+          <input type="checkbox" id="updates" name="updates" value="Yes">
+        </fieldset>
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="currentyear"></span> Herwin Vincent Gaela — Quezon, Philippines</p>
+  </footer>
+
+  <script src="scripts/nav.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+</body>
+</html>

@@ -7,7 +7,6 @@
   <meta name="description" content="Course home page for WDD 231 demonstrating HTML, CSS, and JavaScript." />
   <meta name="author" content="Herwin Vincent Gaela" />
 
-  <!-- Facebook Open Graph Meta Tags -->
   <meta property="og:title" content="WDD 231 • Course Home Page by Herwin Vincent Gaela">
   <meta property="og:description" content="Course home page for WDD 231 demonstrating HTML, CSS, and JavaScript. Built by Herwin Vincent Gaela in the Philippines.">
   <meta property="og:image" content="https://ghrwn.github.io/wdd231/images/profile.jpg">
@@ -15,73 +14,61 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_PH">
 
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <link rel="icon" href="favicon.ico">
-
-  <!-- CSS (small first, then larger with media query) -->
   <link href="styles/small.css" rel="stylesheet">
   <link href="styles/larger.css" rel="stylesheet">
 
-  <!-- Inline CSS for social icons -->
-  <style>
-    .social a {
-      color: #1f2937;       /* dark gray */
-      font-size: 1.5rem;    /* bigger icons */
-      margin: 0 .5rem;      /* spacing */
-    }
-    .social a:hover {
-      color: #2563eb;       /* blue hover effect */
-    }
-  </style>
-
-  <!-- JS (head + defer as required) -->
   <script src="scripts/nav.js" defer></script>
   <script src="scripts/dates.js" defer></script>
   <script src="scripts/courses.js" defer></script>
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="./" aria-label="Home">
-      <img src="images/logo.jpg" alt="Site logo" width="48" height="48" />
-    </a>
-    <span class="site-owner">Herwin Vincent Gaela</span>
+    <div class="header-content">
+      <a class="logo" href="./" aria-label="Home">
+        <img src="images/logo.jpg" alt="Site logo" width="48" height="48" />
+      </a>
+      <span class="site-owner">Herwin Vincent Gaela</span>
 
-    <button id="hamburger" class="hamburger" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+      <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
 
-    <nav id="primary-nav" class="nav">
-      <ul>
-        <li><a class="active" href="./">Home</a></li>
-        <li><a href="chamber/">Chamber Project</a></li>
-        <li><a href="final/">Final Project</a></li>
-      </ul>
-    </nav>
+      <nav id="primary-nav" class="nav">
+        <ul>
+          <li><a class="active" href="./">Home</a></li>
+          <li><a href="chamber/">Chamber Project</a></li>
+          <li><a href="final/">Final Project</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main id="main">
     <h1>Home</h1>
 
-    <!-- row 1 (left) -->
-    <section class="panel about">
-      <h2 class="bar">About Me</h2>
-      <p>
-        Hello everyone! My name is Herwin, and I’m currently based in the Philippines. 
-        I enjoy learning about technology, communication, and ways to improve problem-solving skills. 
-        I’m excited to be in WDD231 because I want to strengthen my web development skills and gain hands-on 
-        experience that will help me build professional, user-friendly websites. 
-        My goal for this course is to deepen my understanding of web design principles 
-        and apply them effectively in real-world projects.
-      </p>
+    <section class="row bio-photo">
+      <article class="panel about">
+        <h2 class="bar">About Me</h2>
+        <p>
+          Hello everyone! My name is Herwin, and I’m currently based in the Philippines.
+          I enjoy learning about technology, communication, and ways to improve problem-solving skills.
+          I’m excited to be in WDD231 because I want to strengthen my web development skills and gain hands-on
+          experience that will help me build professional, user-friendly websites.
+          My goal for this course is to deepen my understanding of web design principles
+          and apply them effectively in real-world projects.
+        </p>
+      </article>
+
+      <aside class="panel photo">
+        <h2 class="bar">Student Photo</h2>
+        <div class="photo-frame">
+          <img src="images/profile.jpg" alt="Portrait of Herwin Vincent Gaela" width="320" height="320" loading="lazy">
+        </div>
+      </aside>
     </section>
 
-    <!-- row 1 (right) -->
-    <aside class="panel photo">
-      <h2 class="bar">Student Photo</h2>
-      <img src="images/profile.jpg" alt="Portrait of Herwin Vincent Gaela" width="320" height="320" loading="lazy">
-    </aside>
-
-    <!-- row 2 (full width) -->
     <section class="panel courses-wrap" id="courses" aria-labelledby="courses-heading">
       <h2 id="courses-heading" class="bar">Web Certificate Courses</h2>
 
@@ -91,22 +78,37 @@
         <button data-filter="WDD" class="btn">WDD</button>
       </div>
 
-      <!-- course bars injected here -->
       <div id="course-cards" class="bars"></div>
-      <p id="credits" class="totals" aria-live="polite"></p>
+
+      <p id="credits" class="totals" aria-live="polite">
+        The total credits for courses listed above is: 0
+      </p>
+    </section>
+
+    <dialog id="course-details"></dialog>
+
+    <!-- NEW SECTION: Animations and Transitions -->
+    <section class="panel animations">
+      <h2 class="bar">CSS Animations & Transitions</h2>
+
+      <div class="demo">
+        <h3>Loading Animation</h3>
+        <div id="loader"></div>
+      </div>
+
+      <div class="demo">
+        <h3>Hover Transition Example</h3>
+        <div class="loader-t"></div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p class="social">
-      <a href="https://github.com/ghrwn" aria-label="GitHub" target="_blank" rel="noopener">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/herwin-vincent/" aria-label="LinkedIn" target="_blank" rel="noopener">
-        <i class="fab fa-linkedin"></i>
-      </a>
+      <a href="https://github.com/ghrwn" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/herwin-vincent/" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+      <a href="#" aria-label="Certificate" target="_blank" rel="noopener"><i class="fas fa-award"></i></a>
     </p>
-
     <p>&copy; <span id="currentyear"></span> <span class="owner">Herwin Vincent Gaela</span> — Quezon, Philippines</p>
     <p id="lastModified"></p>
   </footer>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Confirmation | WDD 231</title>
+  <meta name="description" content="Form Confirmation Page" />
+  <meta name="author" content="Herwin Vincent Gaela" />
+
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a class="logo" href="./" aria-label="Home">
+        <img src="images/logo.jpg" alt="Site logo" width="48" height="48">
+      </a>
+      <span class="site-owner">Herwin Vincent Gaela</span>
+      <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="primary-nav" class="nav">
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="form.html">Form</a></li>
+          <li><a class="active" href="confirmation.html">Confirmation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2 class="bar">Form Submission Confirmation</h2>
+      <div id="confirmation-data"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="currentyear"></span> Herwin Vincent Gaela — Quezon, Philippines</p>
+  </footer>
+
+  <script src="scripts/nav.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const output = document.getElementById('confirmation-data');
+
+    let html = '<ul>';
+    for (const [key, value] of params.entries()) {
+      html += `<li><strong>${key}:</strong> ${value}</li>`;
+    }
+    html += '</ul>';
+
+    output.innerHTML = html;
+  </script>
+</body>
+</html>

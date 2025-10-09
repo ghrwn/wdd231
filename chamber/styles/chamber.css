@@ -508,3 +508,233 @@
     margin: 0;
   }
 }
+
+/* =============================== */
+/* JOIN PAGE FORM STYLES           */
+/* =============================== */
+
+.join-form {
+  max-width: 800px;
+  margin: 3rem auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.join-form h2 {
+  text-align: center;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+}
+
+.join-form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem 1rem;
+}
+
+.join-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.join-form input,
+.join-form select,
+.join-form textarea {
+  padding: 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.join-form textarea {
+  grid-column: span 2;
+  resize: vertical;
+}
+
+.join-form input[type="submit"] {
+  grid-column: span 2;
+  background: #10b981;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.join-form input[type="submit"]:hover {
+  background: #059669;
+}
+
+/* Membership cards below form */
+.membership-cards {
+  max-width: 1100px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.membership-cards h2 {
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+}
+
+.membership-cards .card {
+  display: inline-block;
+  background: #fff;
+  padding: 1.5rem;
+  margin: 0.75rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  width: 240px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.membership-cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.membership-cards button {
+  margin-top: 1rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.membership-cards button:hover {
+  background: #1d4ed8;
+}
+
+/* Modals */
+dialog {
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  max-width: 500px;
+}
+
+dialog button {
+  margin-top: 1rem;
+  background: #334155;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+dialog button:hover {
+  background: #1e293b;
+}
+
+@media (max-width: 768px) {
+  .join-form form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================
+   JOIN PAGE RESPONSIVE STYLING
+   ============================ */
+
+.join-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.join-form input,
+.join-form select,
+.join-form textarea {
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.join-form input:focus,
+.join-form select:focus,
+.join-form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Two-column grid for desktop */
+.container > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Card animation fade-up */
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile layout: stack vertically */
+@media (max-width: 768px) {
+  .container > div {
+    grid-template-columns: 1fr;
+  }
+
+  .membership-cards {
+    margin-top: 2rem;
+  }
+
+  .join-form {
+    padding: 1.5rem;
+  }
+
+  .join-form button.btn-primary {
+    width: 100%;
+  }
+}
+
+/* Modal centering and backdrop consistency */
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  max-width: 480px;
+  width: 90%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
