@@ -1,0 +1,115 @@
+main {
+  padding: 1rem;
+}
+
+/* Visitor message box */
+.visitor-message {
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.discover-gallery h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* Named Grid Areas */
+.grid-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4"
+    "card5"
+    "card6"
+    "card7"
+    "card8";
+}
+
+/* Discover Cards */
+.discover-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.image-container {
+  position: relative;
+  display: block;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+  border-radius: 10px;
+}
+
+/* Hover Overlay Effect (Desktop Only) */
+.image-container figcaption {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.65);
+  color: #fff;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: opacity 0.5s ease;
+  text-align: center;
+}
+
+.image-container figcaption button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #e67e22;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (min-width: 1025px) {
+  .image-container:hover img {
+    transform: scale(1.1);
+  }
+
+  .image-container:hover figcaption {
+    opacity: 1;
+  }
+}
+
+/* Grid Layout for Medium Screens */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6"
+      "card7 card8";
+  }
+}
+
+/* Grid Layout for Large Screens */
+@media (min-width: 1025px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "card1 card2 card3 card4"
+      "card5 card6 card7 card8";
+  }
+}

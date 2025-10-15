@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Quezon Memorial Circle",
+    "address": "Elliptical Road, Diliman, Quezon City",
+    "description": "A national park and shrine honoring President Manuel L. Quezon, surrounded by gardens and museums.",
+    "image": "quezon-memorial-circle.webp"
+  },
+  {
+    "name": "La Mesa Eco Park",
+    "address": "La Mesa Dam Compound, Fairview, QC",
+    "description": "A beautiful green sanctuary offering nature trails, boating, and family picnic areas.",
+    "image": "la-mesa-eco-park.webp"
+  },
+  {
+    "name": "Maginhawa Food Park",
+    "address": "Maginhawa St, Teachers Village East",
+    "description": "A lively food hub featuring diverse local and international cuisines.",
+    "image": "maginhawa-food-park.webp"
+  },
+  {
+    "name": "UP Sunken Garden",
+    "address": "University of the Philippines, Diliman",
+    "description": "A famous open field for sports, concerts, and community events within the UP campus.",
+    "image": "up-sunken-garden.webp"
+  },
+  {
+    "name": "Ninoy Aquino Parks and Wildlife Center",
+    "address": "Elliptical Road, Diliman, Quezon City",
+    "description": "A serene urban forest with wildlife rescue centers, picnic areas, and lagoons.",
+    "image": "ninoy-aquino-wildlife.webp"
+  },
+  {
+    "name": "SM City North EDSA Sky Garden",
+    "address": "North Avenue, Bago Bantay, QC",
+    "description": "A landscaped walkway with restaurants and greenery connecting SM North’s mall wings.",
+    "image": "sm-north-sky-garden.webp"
+  },
+  {
+    "name": "Ateneo Art Gallery",
+    "address": "Ateneo de Manila University, Katipunan Ave.",
+    "description": "A premier modern art museum featuring Filipino masters and contemporary works.",
+    "image": "ateneo-art-gallery.webp"
+  },
+  {
+    "name": "Eastwood City",
+    "address": "Bagumbayan, Quezon City",
+    "description": "A bustling lifestyle district known for shopping, dining, entertainment, and vibrant nightlife.",
+    "image": "eastwood-city.webp"
+  }
+]
