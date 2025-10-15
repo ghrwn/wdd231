@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dishes — LasaPH</title>
+  <meta name="description" content="Explore popular Filipino dishes with ingredients, region of origin, and recipes.">
+  <meta name="author" content="Herwin Vincent Gaela">
+  <link rel="stylesheet" href="styles/global.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="index.html" class="brand"><img src="images/adobo.webp" alt="LasaPH logo"><h1>LasaPH</h1></a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dishes.html" class="active">Dishes</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+    <div class="mobile-nav" style="display:none;">
+      <a href="index.html">Home</a>
+      <a href="dishes.html">Dishes</a>
+      <a href="join.html">Join</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 style="text-align:center;margin-top:1rem">Filipino Dishes</h2>
+    <p style="text-align:center;color:#64748b;max-width:800px;margin:0.5rem auto">Click any dish to view details and ingredients. Save a dish as your preferred category to remember it on return visits.</p>
+
+    <section class="grid" id="dishes-grid" style="margin-top:1rem"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="contact-info">
+        <p>📍 Manila, Philippines</p>
+        <p>✉️ hello@lasaph.local</p>
+      </div>
+      <div class="dev-info">
+        <p>&copy; <span id="currentyear"></span> LasaPH</p>
+        <p id="lastModified"></p>
+        <p><a href="attributions.html">Attributions</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/dishes.js" defer></script>
+</body>
+</html>

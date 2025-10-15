@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LasaPH — Discover Filipino Cuisine</title>
+  <meta name="description" content="LasaPH celebrates Filipino food — discover dishes, recipes, and culture.">
+  <meta name="author" content="Herwin Vincent Gaela">
+  <link rel="stylesheet" href="styles/global.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="index.html" class="brand"><img src="images/adobo.webp" alt="LasaPH logo"><h1>LasaPH</h1></a>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="dishes.html">Dishes</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="attributions.html">Attributions</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+    <div class="mobile-nav" style="display:none;">
+      <a href="index.html">Home</a>
+      <a href="dishes.html">Dishes</a>
+      <a href="join.html">Join</a>
+      <a href="attributions.html">Attributions</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h2>Discover the Flavors of Filipino Cuisine</h2>
+          <p>From the tang of sinigang to the sweet layers of halo-halo — LasaPH highlights traditional dishes, regional specialties, and recipes to try at home.</p>
+          <p>
+            <a href="dishes.html" class="btn btn-primary">Explore Dishes</a>
+            <a href="join.html" class="btn btn-ghost" style="margin-left:.6rem">Join / Submit Recipe</a>
+          </p>
+        </div>
+        <div class="hero-media">
+          <img src="images/lechon.webp" alt="Featured dish" loading="lazy" width="800" height="480">
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2 style="text-align:center">Featured Dishes</h2>
+      <div class="grid" id="home-grid">
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="contact-info">
+        <p>📍 Manila, Philippines</p>
+        <p>✉️ hello@lasaph.local</p>
+      </div>
+      <div class="dev-info">
+        <p>&copy; <span id="currentyear"></span> LasaPH</p>
+        <p id="lastModified"></p>
+        <div class="footer-links"><a href="https://youtu.be/" target="_blank">Demo Video</a></div>
+        <p><a href="attributions.html">Attributions</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/dishes.js" defer></script>
+</body>
+</html>

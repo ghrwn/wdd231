@@ -1,0 +1,28 @@
+/* Desktop / larger screens */
+@media (min-width: 641px) {
+  .logo-container { max-width:1200px; margin:0 auto; padding:0 1rem; }
+  header { padding: .75rem 0; }
+  .header-row { max-width:1200px; margin:0 auto; padding:0 1rem; }
+
+  .logo-container { display:flex; align-items:center; justify-content:space-between; }
+
+  .main-nav ul { gap:1rem; justify-content:flex-end; }
+  .main-nav { display:block; }
+
+  .hero { padding:3rem 1rem; text-align:left; display:flex; align-items:center; justify-content:center; }
+  .hero .hero-text { max-width:900px; margin:0 auto; }
+
+  /* grid layouts for dishes */
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1025px) {
+    .grid-container { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* overlay visible on hover in larger views only */
+  .card { position:relative; }
+  .card .overlay { opacity:0; }
+  .card:hover .overlay { opacity:1; }
+}

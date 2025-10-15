@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Join — LasaPH</title>
+  <meta name="description" content="Subscribe for updates or submit your favorite Filipino recipe.">
+  <meta name="author" content="Herwin Vincent Gaela">
+  <link rel="stylesheet" href="styles/global.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="index.html" class="brand"><img src="images/adobo.webp" alt="LasaPH logo"><h1>LasaPH</h1></a>
+      <nav class="main-nav" aria-label="Primary navigation"><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dishes.html">Dishes</a></li>
+        <li><a href="join.html" class="active">Join</a></li>
+      </ul></nav>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+    <div class="mobile-nav" style="display:none;">
+      <a href="index.html">Home</a>
+      <a href="dishes.html">Dishes</a>
+      <a href="join.html">Join</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 style="text-align:center;margin-top:1rem">Join LasaPH</h2>
+    <p style="text-align:center;color:#64748b">Subscribe for recipe updates or share your favorite recipe with the community.</p>
+
+    <section style="margin:2rem auto;max-width:900px">
+      <form method="get" action="thankyou.html" class="join-form" aria-label="Join form" style="background:#fff;padding:1.25rem;border-radius:10px;box-shadow:var(--card-shadow)">
+        <fieldset style="border:none;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+          <label>First name * <input name="first" autocomplete="given-name" required></label>
+          <label>Last name * <input name="last" autocomplete="family-name" required></label>
+          <label>Organization title <input name="organization-title" pattern="[A-Za-z\\s-]{7,}" title="Minimum 7 letters or hyphens" autocomplete="organization-title"></label>
+          <label>Email * <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required></label>
+          <label>Mobile * <input type="tel" name="phone" autocomplete="tel" required></label>
+          <label>Business name <input name="organization" autocomplete="organization"></label>
+          <label style="grid-column:span 2">Membership level *
+            <select name="membership" required>
+              <option value="">-- Select Level --</option>
+              <option>Subscriber</option>
+              <option>Contributor</option>
+            </select>
+          </label>
+          <label style="grid-column:span 2">Your Recipe or Notes
+            <textarea name="description" rows="4"></textarea>
+          </label>
+
+          <input type="hidden" id="timestamp" name="timestamp" value="">
+          <div style="grid-column:span 2;display:flex;gap:.5rem;justify-content:flex-end">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="index.html" class="btn btn-ghost">Cancel</a>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="contact-info">
+        <p>📍 Manila, Philippines</p>
+        <p>✉️ hello@lasaph.local</p>
+      </div>
+      <div class="dev-info">
+        <p>&copy; <span id="currentyear"></span> LasaPH</p>
+        <p id="lastModified"></p>
+        <p><a href="attributions.html">Attributions</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/form.js" defer></script>
+</body>
+</html>

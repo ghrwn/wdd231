@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Thank You — LasaPH</title>
+  <meta name="description" content="Thank you for joining LasaPH">
+  <meta name="author" content="Herwin Vincent Gaela">
+  <link rel="stylesheet" href="styles/global.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="index.html" class="brand"><img src="images/adobo.webp" alt="logo"><h1>LasaPH</h1></a>
+      <nav class="main-nav" aria-label="Primary navigation"><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dishes.html">Dishes</a></li>
+        <li><a href="join.html" class="active">Join</a></li>
+      </ul></nav>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+    <div class="mobile-nav" style="display:none;">
+      <a href="index.html">Home</a>
+      <a href="dishes.html">Dishes</a>
+      <a href="join.html">Join</a>
+    </div>
+  </header>
+
+  <main class="container" style="text-align:center;padding:2rem 1rem">
+    <h2>🎉 Thank you!</h2>
+    <p>We received your submission — here are the required details you submitted:</p>
+
+    <ul id="submission-details" style="list-style:none;padding:0;margin-top:1rem;max-width:520px;margin-left:auto;margin-right:auto;text-align:left"></ul>
+
+    <p style="margin-top:1.25rem"><a href="index.html" class="btn btn-primary">Return Home</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="contact-info">
+        <p>📍 Manila, Philippines</p>
+      </div>
+      <div class="dev-info">
+        <p>&copy; <span id="currentyear"></span> LasaPH</p>
+        <p id="lastModified"></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const required = ["first","last","email","phone","organization","timestamp"];
+      const ul = document.getElementById("submission-details");
+
+      required.forEach(k => {
+        const v = params.get(k);
+        if (v) {
+          const li = document.createElement("li");
+          const label = k === "timestamp" ? "Submitted on" : k.charAt(0).toUpperCase() + k.slice(1);
+          li.textContent = `${label}: ${decodeURIComponent(v)}`;
+          li.style.padding = ".5rem 1rem";
+          ul.appendChild(li);
+        }
+      });
+    });
+  </script>
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>

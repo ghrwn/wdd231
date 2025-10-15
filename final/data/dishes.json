@@ -1,0 +1,152 @@
+[
+  {
+    "id": "adobo",
+    "name": "Adobo",
+    "region": "National",
+    "category": "Savory",
+    "ingredients": ["pork or chicken", "soy sauce", "vinegar", "garlic"],
+    "address": "Traditional Filipino kitchen",
+    "description": "A savory stew of meat marinated in soy and vinegar, simmered with garlic and peppercorns.",
+    "image": "adobo.webp"
+  },
+  {
+    "id": "sinigang",
+    "name": "Sinigang",
+    "region": "Many regions",
+    "category": "Soup",
+    "ingredients": ["tamarind", "tomato", "vegetables", "pork/shrimp"],
+    "address": "Home-cooked classic soup",
+    "description": "A tangy tamarind-based soup with meat and seasonal vegetables.",
+    "image": "sinigang.webp"
+  },
+  {
+    "id": "lechon",
+    "name": "Lechon",
+    "region": "Cebu / Philippines",
+    "category": "Celebration",
+    "ingredients": ["whole roasted pig", "roasting spices"],
+    "address": "Fiesta roasters",
+    "description": "Crispy-skinned roasted whole pig, served for celebrations and feasts.",
+    "image": "lechon.webp"
+  },
+  {
+    "id": "kare-kare",
+    "name": "Kare-Kare",
+    "region": "Luzon",
+    "category": "Savory",
+    "ingredients": ["oxtail", "peanut sauce", "vegetables"],
+    "address": "Family table",
+    "description": "A rich peanut-based stew usually served with bagoong (shrimp paste).",
+    "image": "kare-kare.webp"
+  },
+  {
+    "id": "lumpia",
+    "name": "Lumpia",
+    "region": "Philippines",
+    "category": "Snack",
+    "ingredients": ["spring roll wrapper", "vegetables", "meat"],
+    "address": "Street food stalls",
+    "description": "Crispy fried spring rolls often filled with vegetables or meat.",
+    "image": "lumpia.webp"
+  },
+  {
+    "id": "halo-halo",
+    "name": "Halo-Halo",
+    "region": "Philippines",
+    "category": "Dessert",
+    "ingredients": ["shaved ice", "sweet beans", "jelly", "evaporated milk"],
+    "address": "Dessert stalls",
+    "description": "A colorful shaved-ice dessert with mixed sweet ingredients and leche flan.",
+    "image": "halo-halo.webp"
+  },
+  {
+    "id": "pancit",
+    "name": "Pancit",
+    "region": "National",
+    "category": "Savory",
+    "ingredients": ["rice noodles", "veggies", "soy sauce"],
+    "address": "Noodle houses",
+    "description": "Filipino noodle dishes served on birthdays for long life symbolism.",
+    "image": "pancit.webp"
+  },
+  {
+    "id": "sisig",
+    "name": "Sisig",
+    "region": "Pampanga",
+    "category": "Savory",
+    "ingredients": ["pork head", "onion", "calamansi", "chili"],
+    "address": "Grill stalls",
+    "description": "Crispy, tart and spicy chopped pork dish often served sizzling on a plate.",
+    "image": "sisig.webp"
+  },
+  {
+    "id": "bibingka",
+    "name": "Bibingka",
+    "region": "Philippines",
+    "category": "Dessert",
+    "ingredients": ["rice flour", "coconut milk", "eggs"],
+    "address": "Market stalls",
+    "description": "A baked rice cake usually topped with salted egg and coconut.",
+    "image": "bibingka.webp"
+  },
+  {
+    "id": "biko",
+    "name": "Biko",
+    "region": "Philippines",
+    "category": "Dessert",
+    "ingredients": ["glutinous rice", "coconut milk", "brown sugar"],
+    "address": "Home desserts",
+    "description": "Sweet sticky rice cake topped with latik (coconut caramel).",
+    "image": "biko.webp"
+  },
+  {
+    "id": "laing",
+    "name": "Laing",
+    "region": "Bicol",
+    "category": "Savory",
+    "ingredients": ["taro leaves", "coconut milk", "chili"],
+    "address": "Regional specialties",
+    "description": "Spicy Bicolano dish of taro leaves cooked in coconut milk and chili.",
+    "image": "laing.webp"
+  },
+  {
+    "id": "kilawin",
+    "name": "Kilawin",
+    "region": "Cordillera / Philippines",
+    "category": "Savory",
+    "ingredients": ["raw fish or meat", "vinegar", "calamansi", "onion"],
+    "address": "Coastal stalls",
+    "description": "Filipino ceviche — meat or fish cured in vinegar and citrus with aromatics.",
+    "image": "kilawin.webp"
+  },
+  {
+    "id": "tocino",
+    "name": "Tocino",
+    "region": "Philippines",
+    "category": "Breakfast",
+    "ingredients": ["sweet cured pork", "garlic"],
+    "address": "Breakfast joints",
+    "description": "Sweet cured pork usually served with garlic rice and egg (tapsilog family).",
+    "image": "tocino.webp"
+  },
+  {
+    "id": "puto",
+    "name": "Puto",
+    "region": "Philippines",
+    "category": "Dessert",
+    "ingredients": ["rice flour", "sugar", "baking powder"],
+    "address": "Bakery stalls",
+    "description": "Steamed rice cakes often eaten with savory dishes like dinuguan.",
+    "image": "puto.webp"
+  },
+  {
+    "id": "palabok",
+    "name": "Palabok",
+    "region": "Philippines",
+    "category": "Savory",
+    "ingredients": ["rice noodles", "shrimp sauce", "toppings"],
+    "address": "Street vendors",
+    "description": "Orange-tinted noodle dish topped with shrimp, chicharrón, egg and scallions.",
+    "image": "palabok.webp"
+  }
+]
